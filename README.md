@@ -9,3 +9,5 @@ Running server:
 
 Running client:
 `./target/globesort/bin/runClient <server_ip> <server_port> <values>`
+
+Hey!
