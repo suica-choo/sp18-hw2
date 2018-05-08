@@ -52,7 +52,7 @@ public class GlobeSortClient {
         IntArray response = serverStub.sortIntegers(request);
 	long t4 = System.currentTimeMillis();
 	System.out.println("The application throughout is " + (nums * 1.0 / ((t4 - t3) / 1000)));
-	System.out.println("The one-way throughout is " + (nums * 1.0 / ((t4 - t3 - response.getSortTime()) / 1000)));
+	System.out.println("The one-way throughout is " + (nums * 1.0 / ((t4 - t3 - response.getSortTime()) / 2000)));
         System.out.println("Sorted array");
 
     }
