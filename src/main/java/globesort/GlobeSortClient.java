@@ -44,15 +44,15 @@ public class GlobeSortClient {
         serverStub.ping(Empty.newBuilder().build());
 	long t2 = System.currentTimeMillis();
         System.out.println("Ping successful.");
-	System.out.println("The latency is " + (t2- t1) + "ms");
+	System.out.println("The round-trip latency is " + (t2- t1) + "ms");
 
         System.out.println("Requesting server to sort array");
         IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
 	long t3 = System.currentTimeMillis();
         IntArray response = serverStub.sortIntegers(request);
 	long t4 = System.currentTimeMillis();
-	System.out.println("The application throughout is " + (nums * 1.0 / ((t4 - t3) / 1000)));
-	System.out.println("The one-way throughout is " + (nums * 1.0 / ((t4 - t3 - response.getSortTime()) / 2000)));
+	System.out.println("The application throughout is " + (nums * 1.0 / ((t4 - t3) / 1000)) + " records/sec");
+	System.out.println("The one-way throughout is " + 4 * (nums * 1.0 / ((t4 - t3 - response.getSortTime()) / 2000)) + "bytes/sec");
         System.out.println("Sorted array");
 
     }
