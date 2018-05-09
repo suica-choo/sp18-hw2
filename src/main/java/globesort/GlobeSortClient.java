@@ -53,8 +53,8 @@ public class GlobeSortClient {
 	long t4 = System.currentTimeMillis();
 	System.out.println("The application latency is " + (t4- t3) + "ms");
 	System.out.println("The one-way latency is " + (response.getSortTime()) + "ms");
-	System.out.println("The application throughout is " + (nums * 1.0 / ((t4 - t3) / 1000)) + " records/sec");
-	System.out.println("The one-way throughout is " + 4 * (nums * 1.0 / ((t4 - t3 - response.getSortTime()) / 2000)) + " bytes/sec");
+	System.out.println("The application throughout is " + (nums * 1000.0 / ((t4 - t3))) + " records/sec");
+	System.out.println("The one-way throughout is " + (nums * 8000.0 / ((t4 - t3 - response.getSortTime()))) + " bytes/sec");
         System.out.println("Sorted array");
 
     }
